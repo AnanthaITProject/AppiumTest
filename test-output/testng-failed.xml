@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="Resources.Listeners"/>
+    <listener class-name="Resources.ExtentReporterNG"/>
+  </listeners>
+  <test name="Test(failed)">
+    <classes>
+      <class name="Project.ApiDemoTest">
+        <methods>
+          <include name="PageObjectMain" invocation-numbers="1"/>
+        </methods>
+      </class> <!-- Project.ApiDemoTest -->
+      <class name="Project.Ecommerce">
+        <methods>
+          <include name="killAppium"/>
+        </methods>
+      </class> <!-- Project.Ecommerce -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

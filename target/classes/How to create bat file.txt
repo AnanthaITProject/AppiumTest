@@ -1,0 +1,7 @@
+1. Open notepad
+2. Insert command:
+ 
+cd C:\Users\ANANTHAROOBAN\AppData\Local\Android\Sdk\emulator
+emulator -avd Nexus5XPie9Emulator
+
+3. then save with .bat extension
