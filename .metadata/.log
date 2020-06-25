@@ -1,0 +1,365 @@
+!SESSION 2020-06-26 06:53:57.937 -----------------------------------------------
+eclipse.buildId=4.7.3.M20180330-0640
+java.version=1.8.0_251
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_MY
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.agileware.natural.cucumber.ui 4 0 2020-06-26 06:54:00.394
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.agileware.natural.cucumber.ui [582]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.builder
+    -> Bundle-SymbolicName: org.eclipse.xtext.builder; bundle-version="2.12.0.v20170519-0809"; singleton:="true"
+       org.eclipse.xtext.builder [598]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.smap
+           -> Bundle-SymbolicName: org.eclipse.xtext.smap; bundle-version="2.12.0.v20170519-0752"
+              org.eclipse.xtext.smap [605]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtext.ui.codetemplates.ui
+    -> Bundle-SymbolicName: org.eclipse.xtext.ui.codetemplates.ui; bundle-version="2.12.0.v20170519-0809"; singleton:="true"
+       org.eclipse.xtext.ui.codetemplates.ui [608]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.ui.codetemplates; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.xtext.ui.codetemplates; bundle-version="2.12.0.v20170519-0809"; singleton:="true"
+              org.eclipse.xtext.ui.codetemplates [607]
+                Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; resolution:="optional"
+                Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; bundle-version="2.2.0"; resolution:="optional"
+                Unresolved requirement: Require-Bundle: org.eclipse.xtext.generator; x-installation:="greedy"; resolution:="optional"
+                  -> Bundle-SymbolicName: org.eclipse.xtext.generator; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+                     org.eclipse.xtext.generator [603]
+                       Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+                       Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+                         -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+                            org.eclipse.xtext.ecore [602]
+                              No resolution report for the bundle.                       Unresolved requirement: Require-Bundle: org.eclipse.xtext.xtext.generator; visibility:="reexport"
+                         -> Bundle-SymbolicName: org.eclipse.xtext.xtext.generator; bundle-version="2.12.0.v20170518-0959"; singleton:="true"
+                            org.eclipse.xtext.xtext.generator [611]
+                              Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+                              Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+                                -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.builder
+           -> Bundle-SymbolicName: org.eclipse.xtext.builder; bundle-version="2.12.0.v20170519-0809"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.smap [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.smap"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.smap [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.smap"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.xtext.smap [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.smap"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.12.0.v20170518-0959"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  org.eclipse.xtext.util [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170518-0959"; osgi.identity="org.eclipse.xtext.util"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend.lib)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.builder 4 0 2020-06-26 06:54:00.424
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.builder [598]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.smap
+    -> Bundle-SymbolicName: org.eclipse.xtext.smap; bundle-version="2.12.0.v20170519-0752"
+       org.eclipse.xtext.smap [605]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.smap [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.smap"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.smap [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.smap"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.xtext.smap [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.smap"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.12.0.v20170518-0959"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  org.eclipse.xtext.util [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170518-0959"; osgi.identity="org.eclipse.xtext.util"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend.lib)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.ecore 4 0 2020-06-26 06:54:00.435
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.ecore [602]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.12.0.v20170518-0959"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  org.eclipse.xtext.util [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170518-0959"; osgi.identity="org.eclipse.xtext.util"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend.lib)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.generator 4 0 2020-06-26 06:54:00.446
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.generator [603]
+  Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+    -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+       org.eclipse.xtext.ecore [602]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.xtext.xtext.generator; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.xtext.xtext.generator; bundle-version="2.12.0.v20170518-0959"; singleton:="true"
+       org.eclipse.xtext.xtext.generator [611]
+         Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+           -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.12.0.v20170518-0959"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  org.eclipse.xtext.util [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170518-0959"; osgi.identity="org.eclipse.xtext.util"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend.lib)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.ui.codetemplates 4 0 2020-06-26 06:54:00.469
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.ui.codetemplates [607]
+  Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; bundle-version="2.2.0"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.generator; x-installation:="greedy"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.xtext.generator; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+       org.eclipse.xtext.generator [603]
+         Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+           -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+              org.eclipse.xtext.ecore [602]
+                No resolution report for the bundle.         Unresolved requirement: Require-Bundle: org.eclipse.xtext.xtext.generator; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.xtext.xtext.generator; bundle-version="2.12.0.v20170518-0959"; singleton:="true"
+              org.eclipse.xtext.xtext.generator [611]
+                Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+                Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+                  -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.12.0.v20170518-0959"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  org.eclipse.xtext.util [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170518-0959"; osgi.identity="org.eclipse.xtext.util"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend.lib)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.ui.codetemplates.ui 4 0 2020-06-26 06:54:00.524
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.ui.codetemplates.ui [608]
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.ui.codetemplates; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.xtext.ui.codetemplates; bundle-version="2.12.0.v20170519-0809"; singleton:="true"
+       org.eclipse.xtext.ui.codetemplates [607]
+         Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.emf.mwe2.launch; bundle-version="2.2.0"; resolution:="optional"
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.generator; x-installation:="greedy"; resolution:="optional"
+           -> Bundle-SymbolicName: org.eclipse.xtext.generator; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+              org.eclipse.xtext.generator [603]
+                Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+                Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+                  -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+                     org.eclipse.xtext.ecore [602]
+                       No resolution report for the bundle.                Unresolved requirement: Require-Bundle: org.eclipse.xtext.xtext.generator; visibility:="reexport"
+                  -> Bundle-SymbolicName: org.eclipse.xtext.xtext.generator; bundle-version="2.12.0.v20170518-0959"; singleton:="true"
+                     org.eclipse.xtext.xtext.generator [611]
+                       Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+                       Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+                         -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.builder
+    -> Bundle-SymbolicName: org.eclipse.xtext.builder; bundle-version="2.12.0.v20170519-0809"; singleton:="true"
+       org.eclipse.xtext.builder [598]
+         Unresolved requirement: Require-Bundle: org.eclipse.xtext.smap
+           -> Bundle-SymbolicName: org.eclipse.xtext.smap; bundle-version="2.12.0.v20170519-0752"
+              org.eclipse.xtext.smap [605]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.12.0.v20170518-0959"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  org.eclipse.xtext.util [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170518-0959"; osgi.identity="org.eclipse.xtext.util"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend.lib)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.xtext.xtext.generator 4 0 2020-06-26 06:54:00.536
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.xtext.xtext.generator [611]
+  Unresolved requirement: Require-Bundle: de.itemis.xtext.antlr; bundle-version="2.0.0"; visibility:="reexport"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.xtext.ecore
+    -> Bundle-SymbolicName: org.eclipse.xtext.ecore; bundle-version="2.12.0.v20170519-0752"; singleton:="true"
+       org.eclipse.xtext.ecore [602]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtext
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.eclipse.xtext.ecore [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170519-0752"; osgi.identity="org.eclipse.xtext.ecore"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.12.0.v20170518-0959"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  org.eclipse.xtext.util [osgi.identity; type="osgi.bundle"; version:Version="2.12.0.v20170518-0959"; osgi.identity="org.eclipse.xtext.util"]
+    require: (osgi.wiring.bundle=org.eclipse.xtend.lib)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.xtend.lib
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="27.1.0.v20190517-1946"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1634)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1613)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1585)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1528)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.ui 2 0 2020-06-26 06:54:56.993
+!MESSAGE Warnings while parsing the key bindings from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.bindings' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-06-26 06:54:56.993
+!MESSAGE Cannot bind to an undefined command: plug-in='org.eclipse.xtext.ui', id='org.eclipse.xtext.ui.editor.outline.QuickOutline'
+
+!ENTRY org.eclipse.ui 2 0 2020-06-26 06:54:57.403
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2020-06-26 06:54:57.403
+!MESSAGE Cannot bind to an undefined command: plug-in='com.genuitec.eclipse.theming.ui', id='com.genuitec.myeclipse.help.darktheme.commandid'
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2020-06-26 06:54:59.444
+!MESSAGE A DevStyle Theme is being activated on this workspace; preparing colors and configuration
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2020-06-26 06:54:59.466
+!MESSAGE DevStyle has archived current color configurations to alternate preferences - will be restored when switching out of the DevStyle Theme
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-06-26 06:55:07.740
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\ANANTHAROOBAN'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 17 2020-06-26 06:55:11.198
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $. ; version: 2.0.7.v20170906-1327
+!STACK 0
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:224)
+	at com.google.gson.Gson.fromJson(Gson.java:887)
+	at com.google.gson.Gson.fromJson(Gson.java:852)
+	at com.google.gson.Gson.fromJson(Gson.java:801)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:91)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:66)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:124)
+	at com.google.common.util.concurrent.AbstractIdleService$DelegateService$1.run(AbstractIdleService.java:62)
+	at com.google.common.util.concurrent.Callables$4.run(Callables.java:122)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:385)
+	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:213)
+	... 9 more

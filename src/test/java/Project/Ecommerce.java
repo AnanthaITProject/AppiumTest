@@ -26,6 +26,7 @@ public class Ecommerce extends Base{
 	@Test
 	public void ValidateTotal() throws InterruptedException, IOException
 	{
+		System.out.println("Clone project added");
 	
 		service = startServer();
 		AndroidDriver<AndroidElement> driver = Capabilities("GeneralAppStore");
