@@ -21,6 +21,11 @@ public class Base {
 	
 	public static AndroidDriver<AndroidElement> driver;
 	
+	public static void AddOriginalTest()
+	{
+		System.out.println("Original added here");
+	}
+	
 	public static void killAppiumMethod() throws IOException, InterruptedException
 	{
 		Runtime.getRuntime().exec(System.getProperty("user.dir")+"\\src\\main\\java\\Resources\\TaskKiller.bat");
