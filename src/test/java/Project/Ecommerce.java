@@ -29,6 +29,7 @@ public class Ecommerce extends Base{
 		System.out.println("Clone project added");
 		System.out.println("Original added after pull");
 		System.out.println("Commit to develop branch");
+		System.out.println("Original added");
 	
 		service = startServer();
 		AndroidDriver<AndroidElement> driver = Capabilities("GeneralAppStore");
